@@ -1,0 +1,14 @@
+totalEmission <- aggregate(Emissions ~ year, NEIdata, sum)
+totalEmission
+##   year Emissions
+## 1 1999   7332967
+## 2 2002   5635780
+## 3 2005   5454703
+## 4 2008   3456273
+barplot(
+  (totalEmission$Emissions)/10^6,
+  names.arg=totalEmission$year,
+  xlab="Year",
+  ylab="PM2.5 Emissions (10^6 Tons)",
+  main="Total PM2.5 Emissions From All US Sources"
+)
